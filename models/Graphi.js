@@ -28,4 +28,5 @@ const SingleBar = mongoose.model('SingleBar', Graphi_desing)
 const HorizentalBar = mongoose.model('HorizentalBar', Graphi_desing)
 const MultipleBar = mongoose.model('MultipleBar', Graphi_desing)
 const SimpleLine = mongoose.model('SimpleLine', Graphi_desing)
-module.exports = { SingleBar, HorizentalBar, MultipleBar, SimpleLine };
+const DualLine = mongoose.model('DualLine', Graphi_desing)
+module.exports = { SingleBar, HorizentalBar, MultipleBar, SimpleLine,DualLine};

@@ -1,4 +1,4 @@
-const { SingleBar, HorizentalBar, MultipleBar, SimpleLine } = require("../models/Graphi");
+const { SingleBar, HorizentalBar, MultipleBar, SimpleLine, DualLine } = require("../models/Graphi");
 
 /* ============ SingleBar  start =============== */
 exports.Graphi_servics_post = async (data) => {
@@ -65,5 +65,18 @@ exports.Graphi_servics_get_SimpleLine = async () => {
 }
 exports.Graphi_servics_Delete_SimpleLine = async ({ id }) => {
     const result = await SimpleLine.deleteOne({ _id: id })
+    return result;
+}
+/* ============ DualLine =============== */
+exports.Graphi_servics_post_DualLine = async (data) => {
+    const result = await DualLine.create(data)
+    return result;
+}
+exports.Graphi_servics_get_DualLine = async () => {
+    const result = await DualLine.find()
+    return result;
+}
+exports.Graphi_servics_Delete_DualLine = async ({ id }) => {
+    const result = await DualLine.deleteOne({ _id: id })
     return result;
 }
