@@ -15,6 +15,11 @@ const Graphi_desing = mongoose.Schema({
         required: [true, "Number"],
         min: [0, "minima prics"],
         max: [900000]
+    },
+    xValue: {
+        type: Number,
+        min: [0, "minima prics"],
+        max: [900000]
     }
 
 }, { timestamps: true })
