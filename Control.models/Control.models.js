@@ -1,4 +1,4 @@
-const { Graphi_servics_post, Graphi_servics_get, Graphi_servics_Delete, Graphi_servics_post_Horizental, Graphi_servics_get_Horizental, Graphi_servics_Delete_Horizental, Graphi_servics_post_MultipleBar, Graphi_servics_get_MultipleBar, Graphi_servics_Delete_MultipleBar, Graphi_servics_post_SimpleLine, Graphi_servics_get_SimpleLine, Graphi_servics_Delete_SimpleLine, Graphi_servics_post_DualLine, Graphi_servics_get_DualLine, Graphi_servics_Delete_DualLine } = require("../servics/Graphi.servics");
+const { Graphi_servics_post, Graphi_servics_get, Graphi_servics_Delete, Graphi_servics_post_Horizental, Graphi_servics_get_Horizental, Graphi_servics_Delete_Horizental, Graphi_servics_post_MultipleBar, Graphi_servics_get_MultipleBar, Graphi_servics_Delete_MultipleBar, Graphi_servics_post_SimpleLine, Graphi_servics_get_SimpleLine, Graphi_servics_Delete_SimpleLine, Graphi_servics_post_DualLine, Graphi_servics_get_DualLine, Graphi_servics_Delete_DualLine, Graphi_servics_Update } = require("../servics/Graphi.servics");
 
 
 /* ========== singleBar ==============*/
@@ -36,6 +36,23 @@ exports.Graphi_get = async (req, res) => {
 exports.Graphi_Delete = async (req, res) => {
     try {
         const result = await Graphi_servics_Delete(req.params);
+        res.status(200).json({
+            status: "suscces full Delet",
+            data: result,
+        })
+
+    } catch (error) {
+        res.status(400).json({
+            status: "Fale",
+            data: error,
+        })
+    }
+}
+exports.Graphi_Update = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const yValue = req.body.value;
+        const result = await Graphi_servics_Update(id, yValue);
         res.status(200).json({
             status: "suscces full Delet",
             data: result,

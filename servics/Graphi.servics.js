@@ -9,6 +9,23 @@ exports.Graphi_servics_get = async () => {
     const result = await SingleBar.find()
     return result;
 }
+
+
+exports.Graphi_servics_Update = async (id, yValue) => {
+    const filterdata = await SingleBar.find()
+    const ID = await filterdata[id]._id
+    const data = { "yValue": yValue }
+    if (ID) {
+        const result = await SingleBar.updateMany({ _id: ID }, { $set: data }, {
+            runValidators: true,
+        })
+        return result;
+    }
+
+}
+
+
+
 exports.Graphi_servics_Delete = async ({ id }) => {
     const result = await SingleBar.deleteOne({ _id: id })
     return result;

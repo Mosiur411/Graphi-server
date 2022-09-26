@@ -1,5 +1,5 @@
 const express = require('express');
-const { Graphi_post, Graphi_get, Graphi_Delete, Graphi_post_Horizental, Graphi_get_Horizental, Graphi_Delete_Horizental, Graphi_post_MultipleBar, Graphi_get_MultipleBar, Graphi_Delete_MultipleBar, Graphi_post_SimpleLine, Graphi_get_SimpleLine, Graphi_Delete_SimpleLine, Graphi_Delete_DualLine, Graphi_get_DualLine, Graphi_post_DualLine } = require('../Control.models/Control.models');
+const { Graphi_post, Graphi_get, Graphi_Delete, Graphi_post_Horizental, Graphi_get_Horizental, Graphi_Delete_Horizental, Graphi_post_MultipleBar, Graphi_get_MultipleBar, Graphi_Delete_MultipleBar, Graphi_post_SimpleLine, Graphi_get_SimpleLine, Graphi_Delete_SimpleLine, Graphi_Delete_DualLine, Graphi_get_DualLine, Graphi_post_DualLine, Graphi_Update } = require('../Control.models/Control.models');
 const router = express.Router()
 
 /* ========== singleBar ==============*/
@@ -32,6 +32,7 @@ router.route('/dualLine')
 
 router.route('/singleBar/:id')
     .delete(Graphi_Delete)
+    .patch(Graphi_Update)
 router.route('/horizentalBar/:id')
     .delete(Graphi_Delete_Horizental)
 router.route('/multipleBar/:id')
