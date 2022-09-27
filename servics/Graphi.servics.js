@@ -32,7 +32,7 @@ exports.Graphi_servics_Delete = async ({ id }) => {
 }
 
 
-
+// Graphi_servics_Update_DualLine
 
 
 
@@ -48,6 +48,18 @@ exports.Graphi_servics_get_Horizental = async () => {
 exports.Graphi_servics_Delete_Horizental = async ({ id }) => {
     const result = await HorizentalBar.deleteOne({ _id: id })
     return result;
+}
+exports.Graphi_servics_Update_Horizental = async (id, yValue) => {
+    const filterdata = await HorizentalBar.find()
+    const ID = await filterdata[id]._id
+    const data = { "yValue": yValue }
+    if (ID) {
+        const result = await HorizentalBar.updateMany({ _id: ID }, { $set: data }, {
+            runValidators: true,
+        })
+        return result;
+    }
+
 }
 
 
@@ -66,7 +78,24 @@ exports.Graphi_servics_Delete_MultipleBar = async ({ id }) => {
     const result = await MultipleBar.deleteOne({ _id: id })
     return result;
 }
+exports.Graphi_servics_Update_MultipleBar = async (id, yValue, datasetIndex) => {
+    const filterdata = await MultipleBar.find()
+    const ID = await filterdata[id]._id
+    let data;
+    if (datasetIndex === 0) {
+        data = { "yValue": yValue }
+    } else {
+        data = { "xValue": yValue }
+    }
 
+    if (ID) {
+        const result = await MultipleBar.updateMany({ _id: ID }, { $set: data }, {
+            runValidators: true,
+        })
+        return result;
+    }
+
+}
 
 
 
@@ -84,6 +113,19 @@ exports.Graphi_servics_Delete_SimpleLine = async ({ id }) => {
     const result = await SimpleLine.deleteOne({ _id: id })
     return result;
 }
+exports.Graphi_servics_Update_SimpleLine = async (id, yValue) => {
+    const filterdata = await SimpleLine.find()
+    const ID = await filterdata[id]._id
+    const data = { "yValue": yValue }
+    if (ID) {
+        const result = await SimpleLine.updateMany({ _id: ID }, { $set: data }, {
+            runValidators: true,
+        })
+        return result;
+    }
+
+}
+
 /* ============ DualLine =============== */
 exports.Graphi_servics_post_DualLine = async (data) => {
     const result = await DualLine.create(data)
@@ -96,4 +138,16 @@ exports.Graphi_servics_get_DualLine = async () => {
 exports.Graphi_servics_Delete_DualLine = async ({ id }) => {
     const result = await DualLine.deleteOne({ _id: id })
     return result;
+}
+exports.Graphi_servics_Update_DualLine = async (id, yValue) => {
+    const filterdata = await DualLine.find()
+    const ID = await filterdata[id]._id
+    const data = { "yValue": yValue }
+    if (ID) {
+        const result = await DualLine.updateMany({ _id: ID }, { $set: data }, {
+            runValidators: true,
+        })
+        return result;
+    }
+
 }
