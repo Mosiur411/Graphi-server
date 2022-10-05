@@ -5,7 +5,7 @@ const { Graphi_servics_post, Graphi_servics_get, Graphi_servics_Delete, Graphi_s
 
 exports.Graphi_post = async (req, res) => {
     try {
-        const result = await Graphi_servics_post(req.body);
+        const result = await Graphi_servics_post(req);
         res.status(200).json({
             status: "suscces full post",
             data: result,
@@ -20,7 +20,7 @@ exports.Graphi_post = async (req, res) => {
 }
 exports.Graphi_get = async (req, res) => {
     try {
-        const result = await Graphi_servics_get();
+        const result = await Graphi_servics_get(req.query);
         res.status(200).json({
             status: "suscces full get",
             data: result,
@@ -67,9 +67,10 @@ exports.Graphi_Update = async (req, res) => {
 }
 
 /* ========== HorizontalBarChart Graphi_Update_Horizental==============*/
+
 exports.Graphi_post_Horizental = async (req, res) => {
     try {
-        const result = await Graphi_servics_post_Horizental(req.body);
+        const result = await Graphi_servics_post_Horizental(req);
         res.status(200).json({
             status: "suscces full post",
             data: result,
@@ -84,7 +85,7 @@ exports.Graphi_post_Horizental = async (req, res) => {
 }
 exports.Graphi_get_Horizental = async (req, res) => {
     try {
-        const result = await Graphi_servics_get_Horizental();
+        const result = await Graphi_servics_get_Horizental(req.query);
         res.status(200).json({
             status: "suscces full get",
             data: result,
@@ -133,7 +134,7 @@ exports.Graphi_Update_Horizental = async (req, res) => {
 /* ========== MultipleBar ==============*/
 exports.Graphi_post_MultipleBar = async (req, res) => {
     try {
-        const result = await Graphi_servics_post_MultipleBar(req.body);
+        const result = await Graphi_servics_post_MultipleBar(req);
         res.status(200).json({
             status: "suscces full post",
             data: result,
@@ -147,8 +148,9 @@ exports.Graphi_post_MultipleBar = async (req, res) => {
     }
 }
 exports.Graphi_get_MultipleBar = async (req, res) => {
+    console.log(req.query)
     try {
-        const result = await Graphi_servics_get_MultipleBar();
+        const result = await Graphi_servics_get_MultipleBar(req.query);
         res.status(200).json({
             status: "suscces full get",
             data: result,
@@ -200,7 +202,7 @@ exports.Graphi_Update_MultipleBar = async (req, res) => {
 /* ========== SimpleLine ==============*/
 exports.Graphi_post_SimpleLine = async (req, res) => {
     try {
-        const result = await Graphi_servics_post_SimpleLine(req.body);
+        const result = await Graphi_servics_post_SimpleLine(req);
         res.status(200).json({
             status: "suscces full post",
             data: result,
@@ -215,7 +217,7 @@ exports.Graphi_post_SimpleLine = async (req, res) => {
 }
 exports.Graphi_get_SimpleLine = async (req, res) => {
     try {
-        const result = await Graphi_servics_get_SimpleLine();
+        const result = await Graphi_servics_get_SimpleLine(req.query);
         res.status(200).json({
             status: "suscces full get",
             data: result,
@@ -267,7 +269,7 @@ exports.Graphi_Update_SimpleLine = async (req, res) => {
 /* ========== DualLine ==============*/
 exports.Graphi_post_DualLine = async (req, res) => {
     try {
-        const result = await Graphi_servics_post_DualLine(req.body);
+        const result = await Graphi_servics_post_DualLine(req);
         res.status(200).json({
             status: "suscces full post",
             data: result,
@@ -282,7 +284,7 @@ exports.Graphi_post_DualLine = async (req, res) => {
 }
 exports.Graphi_get_DualLine = async (req, res) => {
     try {
-        const result = await Graphi_servics_get_DualLine();
+        const result = await Graphi_servics_get_DualLine(req.query);
         res.status(200).json({
             status: "suscces full get",
             data: result,
