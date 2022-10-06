@@ -7,16 +7,8 @@ const GraphiRouter = require('./routes/Graphi.routes')
 app.use(express.json())
 app.use(cors())
 
-
-
-
 /* ==================== post Data  */
 app.use('/api/v1/grap', GraphiRouter)
-
-
-
-
-
 
 app.get('/', (req, res) => {
     res.send("This is a connet app js ")

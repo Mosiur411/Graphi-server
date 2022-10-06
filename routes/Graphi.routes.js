@@ -28,8 +28,6 @@ router.route('/dualLine')
     .post(Graphi_post_DualLine)
     .get(Graphi_get_DualLine)
 
-
-
 router.route('/singleBar/:id')
     .delete(Graphi_Delete)
     .patch(Graphi_Update)

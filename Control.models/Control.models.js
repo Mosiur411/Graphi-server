@@ -1,6 +1,5 @@
 const { Graphi_servics_post, Graphi_servics_get, Graphi_servics_Delete, Graphi_servics_post_Horizental, Graphi_servics_get_Horizental, Graphi_servics_Delete_Horizental, Graphi_servics_post_MultipleBar, Graphi_servics_get_MultipleBar, Graphi_servics_Delete_MultipleBar, Graphi_servics_post_SimpleLine, Graphi_servics_get_SimpleLine, Graphi_servics_Delete_SimpleLine, Graphi_servics_post_DualLine, Graphi_servics_get_DualLine, Graphi_servics_Delete_DualLine, Graphi_servics_Update, Graphi_servics_Update_Horizental, Graphi_servics_Update_MultipleBar, Graphi_servics_Update_SimpleLine, Graphi_servics_Update_DualLine } = require("../servics/Graphi.servics");
 
-
 /* ========== singleBar ==============*/
 
 exports.Graphi_post = async (req, res) => {
@@ -130,7 +129,6 @@ exports.Graphi_Update_Horizental = async (req, res) => {
         })
     }
 }
-
 /* ========== MultipleBar ==============*/
 exports.Graphi_post_MultipleBar = async (req, res) => {
     try {
@@ -148,7 +146,6 @@ exports.Graphi_post_MultipleBar = async (req, res) => {
     }
 }
 exports.Graphi_get_MultipleBar = async (req, res) => {
-    console.log(req.query)
     try {
         const result = await Graphi_servics_get_MultipleBar(req.query);
         res.status(200).json({
@@ -196,9 +193,6 @@ exports.Graphi_Update_MultipleBar = async (req, res) => {
         })
     }
 }
-
-
-
 /* ========== SimpleLine ==============*/
 exports.Graphi_post_SimpleLine = async (req, res) => {
     try {
@@ -262,10 +256,6 @@ exports.Graphi_Update_SimpleLine = async (req, res) => {
         })
     }
 }
-
-
-
-
 /* ========== DualLine ==============*/
 exports.Graphi_post_DualLine = async (req, res) => {
     try {

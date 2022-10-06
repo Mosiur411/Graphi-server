@@ -77,10 +77,8 @@ exports.Graphi_servics_post_MultipleBar = async (req) => {
 }
 exports.Graphi_servics_get_MultipleBar = async (data) => {
     const userData = data?.user
-    console.log(userData)
     const result = await MultipleBar.find()
     const userresult = result.filter(ud => ud?.user === userData)
-    console.log(userresult)
     if (userresult?.length >= 1) {
         return userresult;
     }
