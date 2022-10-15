@@ -5,10 +5,10 @@ const cors = require('cors')
 const server = require("http").Server(app)
 
 const io = require("socket.io")(server, {
-	cors: {
-		origin: "*",
-		methods: [ "GET", "POST" ]
-	}
+    cors: {
+        origin: "*",
+        methods: ["GET", "POST"]
+    }
 })
 
 const GraphiRouter = require('./routes/Graphi.routes')
@@ -28,7 +28,8 @@ io.on('connection', (socket) => {
     socket.on('store_data', () => {
         socket.broadcast.emit("get_data")
     });
-}); 
+   
+});
 
 module.exports = server;
 
