@@ -11,6 +11,7 @@ exports.Graphi_post = async (req, res) => {
         })
 
     } catch (error) {
+        console.log(error)
         res.status(400).json({
             status: "Fale",
             data: error,

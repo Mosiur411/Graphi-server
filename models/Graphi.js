@@ -4,22 +4,19 @@ const Graphi_desing = mongoose.Schema({
     label: {
         type: String,
         required: [true, "Not your name"],
-        trim: true,
-        unique: [true, "names is unique"],
-        minlength: [2, 'fast me at 3 section '],
-        maxLength: [200, "So sorry bro i genaret 200 number max"]
+        unique: [false, "names is unique"],
 
     },
     yValue: {
         type: Number,
         required: [true, "Number"],
-        min: [0, "minima prics"],
-        max: [900000,"max prics"]
+        unique: [false, "names is unique"],
     },
     xValue: {
         type: Number,
         min: [0, "minima prics"],
-        max: [900000,"max prics"]
+        max: [900000,"max prics"],
+        unique: [false, "names is unique"],
     },
     user:{
         type: String,
