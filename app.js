@@ -12,11 +12,16 @@ const io = require("socket.io")(server, {
 })
 
 const GraphiRouter = require('./routes/Graphi.routes')
+const { send } = require('process')
 
 /* Middleiwres*/
 app.use(express.json())
 app.use(cors())
 
+
+app.get('/',(req,res)=>{
+    res.send("hi")
+})
 /* ==================== post Data  */
 app.use('/api/v1/grap', GraphiRouter)
 
